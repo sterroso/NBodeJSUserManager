@@ -32,4 +32,18 @@ export default class UserRepository extends Repository {
             throw new Error(error.message);
         }
     }
+
+    getRoles = async (userId) => {
+        try {
+            const user = await this.dao.getBy({ _id: userId });
+
+            if (!user) {
+                throw new Error(`User with id "${userId}" not found.`);
+            }
+
+            return user?.roles || [];
+        } catch (error) {
+            throw new Error(error.message);
+        }
+    }
 }
