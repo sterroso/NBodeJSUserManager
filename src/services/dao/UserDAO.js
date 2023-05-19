@@ -6,11 +6,11 @@ export default class UserDAO {
         try {
             const users = await UserModel.paginate(query, options);
 
-            if (users.count === 0) {
+            if (users.totalDocs === 0) {
                 throw new Error("No users were found.");
             }
 
-            users.payload = users.payload.map((user) => UserDTO.getLean(user));
+            users.payload = users.docs.map((user) => UserDTO.getLean(user));
 
             return users;
         } catch (error) {

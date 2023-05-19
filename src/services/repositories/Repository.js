@@ -9,7 +9,7 @@ export default class Repository {
         try {
             const results = await this.dao.getAll(query, options);
     
-            if (results.count > 0) {
+            if (results.totalDocs > 0) {
                 return results;
             }
     

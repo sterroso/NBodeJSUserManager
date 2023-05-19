@@ -1,7 +1,7 @@
 import { hashSync } from "bcrypt";
 import { DEFAULT_SALT_ROUNDS } from "../../constants/app.constants.js";
 import DTF from "../../constants/dataTransformationFormats.constants.js";
-import { DEFAULT_USER_GENDER, DEFAULT_USER_ROLE, USER_GENDERS, USER_ROLES } from "../../constants/user.constants";
+import { DEFAULT_USER_GENDER, DEFAULT_USER_ROLE, USER_GENDERS, USER_ROLES } from "../../constants/user.constants.js";
 
 /**
  * An User Data Transformation Object is a middleware utility that
